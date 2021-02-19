@@ -17,7 +17,7 @@ jobs:
       - run:
           name: Activate QEMU
           command:
-            sudo docker run -it --rm --privileged multiarch/qemu-user-static --reset --credential yes --persistent yes
+            docker run -it --rm --privileged multiarch/qemu-user-static --reset --credential yes --persistent yes
       - run:
           name: Build flow
           no_output_timeout: 30m
