@@ -19,7 +19,7 @@ jobs:
       - run:
           command: mkdir -p artefacts
           name: Create directory for storing artefacts
-       - run:
+      - run:
           command: docker run --rm --privileged multiarch/qemu-user-static --reset --publish yes
           name: Set builder image
       - run:
