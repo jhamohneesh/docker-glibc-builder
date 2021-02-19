@@ -15,6 +15,7 @@ jobs:
     executor: builder
     steps:
       - checkout
+      - setup_remote_docker
       - run:
           command: mkdir -p artefacts
           name: Create directory for storing artefacts
@@ -36,7 +37,7 @@ jobs:
     steps:
        - attach_workspace:
            at: ~/docker-glibc-builder
-       - setup_remote_docker
+       
        - run:
            name: Activate QEMU
            command:
