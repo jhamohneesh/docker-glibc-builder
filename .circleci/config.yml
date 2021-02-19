@@ -34,6 +34,7 @@ jobs:
     executor: builder
     working_directory: ~/docker-glibc-builder
     steps:
+       - checkout
        - attach_workspace:
            at: ~/docker-glibc-builder
        - setup_remote_docker 
