@@ -33,11 +33,9 @@ jobs:
           paths: artefacts
       - store_artifacts:
           path: artefacts
-   build_aarch64_linux:
-    machine:
-      image: ubuntu-1604:201903-01
-    working_directory: ~/flow
-    steps:
+  build_aarch64_linux:
+    executor: builder
+     steps:
       - attach_workspace:
           at: ~/flow
       - run:
