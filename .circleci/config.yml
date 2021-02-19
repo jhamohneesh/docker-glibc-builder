@@ -31,8 +31,7 @@ jobs:
       - store_artifacts:
           path: artefacts
   build-arm64:
-    machine:
-      image: ubuntu-1604:201903-01
+    executor: builder
     working_directory: ~/docker-glibc-builder
     steps:
        - attach_workspace:
