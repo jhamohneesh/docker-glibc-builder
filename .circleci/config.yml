@@ -48,6 +48,7 @@ jobs:
            command: |
              docker build -t mohneeshjha/glibc-builder:$CIRCLE_SHA1 -f Dockerfile.aarch64  .
              docker run --rm --env GLIBC_VERSION --env STDOUT=1 mohneeshjha/glibc-builder:$CIRCLE_SHA1 > glibc-bin-$GLIBC_VERSION-0-aarch64.tar.gz
+             cp glibc-bin-$GLIBC_VERSION-0-aarch64.tar.gz artefacts/glibc-bin-$GLIBC_VERSION-0-aarch64.tar.gz
        - persist_to_workspace:
            root: .
            paths: artefacts
