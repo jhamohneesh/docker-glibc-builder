@@ -15,7 +15,6 @@ jobs:
     executor: builder
     steps:
       - checkout
-      - setup_remote_docker
       - run:
           command: mkdir -p artefacts
           name: Create directory for storing artefacts
