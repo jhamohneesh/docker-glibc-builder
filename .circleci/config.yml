@@ -33,6 +33,7 @@ jobs:
   build-arm64:
     executor: builder
     steps:
+       - setup_remote_docker
        - run:
            name: Activate QEMU
            command:
