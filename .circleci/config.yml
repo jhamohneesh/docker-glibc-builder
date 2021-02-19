@@ -53,7 +53,7 @@ jobs:
 workflows:
   build-compile-upload:
     jobs:
-      - build_aarch64_linux
+      - build
       - upload-master:
           filters:
             branches:
