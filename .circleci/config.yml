@@ -34,7 +34,7 @@ jobs:
     executor: builder
     steps:
        - attach_workspace:
-           at:  ~/docker-glibc-builder
+           at: ~/docker-glibc-builder
        - setup_remote_docker
        - run:
            name: Activate QEMU
