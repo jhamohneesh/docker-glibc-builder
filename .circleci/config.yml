@@ -68,17 +68,6 @@ jobs:
 workflows:
   build-compile-upload:
     jobs:
-      - build
-      - upload-master:
-          filters:
-            branches:
-              only: master
-            tags:
-              ignore: /.*/
-          requires:
-            - build
-  build-arm64-compile-upload:
-    jobs:
       - build_aarch64_linux
       - upload-master:
           filters:
@@ -88,3 +77,4 @@ workflows:
               ignore: /.*/
           requires:
             - build
+  
