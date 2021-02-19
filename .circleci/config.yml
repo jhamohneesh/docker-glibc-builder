@@ -42,8 +42,8 @@ jobs:
            name: Build flow
            no_output_timeout: 30m
            command: |
-             docker build -t mohneeshjha/glibc-builder:$CIRCLE_SHA1 -f Dockerfile_aarch64 .
-             docker run --rm --env GLIBC_VERSION --env STDOUT=1 sgerrand/glibc-builder:$CIRCLE_SHA1 > artefacts/glibc-bin-$GLIBC_VERSION-0-$(uname -m).tar.gz
+             docker build -t mohneeshjha/glibc-builder:$CIRCLE_SHA1 -f Dockerfile .
+             docker run --rm --env GLIBC_VERSION --env STDOUT=1 mohneeshjha/glibc-builder:$CIRCLE_SHA1 > artefacts/glibc-bin-$GLIBC_VERSION-0-$(uname -m).tar.gz
        - persist_to_workspace:
            root: .
            paths: artefacts
