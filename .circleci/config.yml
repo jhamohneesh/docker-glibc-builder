@@ -39,12 +39,11 @@ jobs:
        - run:
            name: Activate QEMU
            command:
-             docker run -it --rm --privileged multiarch/qemu-user-static --reset --credential yes --persistent yes
+             docker run -it --rm --privileged multiarch/qemu-user-static 
        - run:
            name: Build flow
            no_output_timeout: 30m
            command: |
-             cp Dockerfile .
              docker build -t mohneeshjha/glibc-builder:$CIRCLE_SHA1  .
              docker run --rm --env GLIBC_VERSION --env STDOUT=1 mohneeshjha/glibc-builder:$CIRCLE_SHA1 > artefacts/glibc-bin-$GLIBC_VERSION-0-$(uname -m).tar.gz
        - persist_to_workspace:
