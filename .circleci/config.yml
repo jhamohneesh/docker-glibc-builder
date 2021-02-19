@@ -32,7 +32,7 @@ jobs:
           path: artefacts
   build-arm64:
     executor: builder
-     steps:
+    steps:
        - run:
            name: Activate QEMU
            command:
